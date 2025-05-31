@@ -1,7 +1,7 @@
 # default.nix
 let
   nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-24.11";
-  pkgs = import nixpkgs rec { 
+  pkgs = import nixpkgs { 
     config = {};
     overlays = []; 
   };
@@ -9,6 +9,7 @@ let
   # both x and y then y takes precedence).
   callPackage = pkgs.lib.callPackageWith (pkgs // packages);
   packages =  { 
+    openblas = pkgs.openblas;
     gmp = callPackage ./gmp.nix { };
     flint = callPackage ./flint.nix { };
     maple = callPackage ./maple.nix { };
