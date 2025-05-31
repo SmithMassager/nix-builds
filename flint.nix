@@ -38,7 +38,6 @@ stdenv.mkDerivation {
   installPhase = ''
     make install
     cp compile_commands.json $out
-    echo "!!!!!!HELLO!!!!!"
-    echo ${openblas}
+    mv $out/include/flint/* $out/include
   '';
 }
