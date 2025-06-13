@@ -9,10 +9,10 @@ let
   # both x and y then y takes precedence).
   callPackage = pkgs.lib.callPackageWith (pkgs // packages);
   packages =  { 
-    openblas = pkgs.openblas;
+    openblas = callPackage ./openblas.nix { };
     gmp = callPackage ./gmp.nix { };
     flint = callPackage ./flint.nix { };
-    maple = callPackage ./maple.nix { };
-    hnfproj = callPackage ./hnfproj.nix { };
+    #maple = callPackage ./maple.nix { };
+    #hnfproj = callPackage ./hnfproj.nix { };
   };
 in packages
