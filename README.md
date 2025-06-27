@@ -3,5 +3,6 @@ Execute the following to fetch SmithMassagerMaple, SmithMassagerC, and to build 
 ```bash
 nix-shell
 make
+cd SmithMassagerC
 make install
 ```
