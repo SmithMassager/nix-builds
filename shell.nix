@@ -21,7 +21,7 @@ pkgs.mkShell {
     git clone https://github.com/SmithMassager/SmithMassagerMaple.git $MAPLESRC
     cd SmithMassagerC
     FILE="defs.mk"
-    MAPLE="/Library/Frameworks/Maple.framework/Versions/2025/"
+    MAPLE="/Library/Frameworks/Maple.framework/Versions/Current/"
     PWD="$(pwd)/"
 
     sed -i.bak "s|^\(export CC := \).*|\1clang|" "$FILE"

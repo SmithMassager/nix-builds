@@ -33,7 +33,7 @@ stdenv.mkDerivation {
     ./configure --prefix=$out --with-blas
   '';
   buildPhase = ''
-    bear -- make -j
+    bear -- make -j8
   '';
   installPhase = ''
     make install
